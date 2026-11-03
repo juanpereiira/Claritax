@@ -7,3 +7,9 @@ python-multipart
 PyYAML
 pytest
 httpx
+Pillow
+pypdf
+
+
+
+
