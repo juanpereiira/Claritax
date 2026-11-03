@@ -1,0 +1,1 @@
+Storage adapter placeholder. Configure local/object storage implementation here.
