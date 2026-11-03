@@ -1,20 +1,16 @@
 
-"""Document validation, storage, and pipeline submission."""
+"""Document validation, storage, and pipeline handoff for Claritax."""
 
 import hashlib
 import io
 import uuid
 from pathlib import Path
-from typing import Any
 
-from fastapi import BackgroundTasks, UploadFile
+from app.services.pipeline_service import enqueue_document
+
+from fastapi import UploadFile
 from PIL import Image
 from pypdf import PdfReader
-
-from app.services.pipeline_service import (
-    PipelineService,
-    PipelineSubmissionError,
-)
 
 
 ALLOWED_EXTENSIONS = {".pdf", ".jpg", ".jpeg", ".png"}
@@ -43,21 +39,22 @@ class UploadValidationError(Exception):
 
 
 class DocumentService:
-    """Validate, store, and submit documents for processing."""
+    """Validate, store, and prepare documents for processing."""
 
     def __init__(
         self,
         upload_dir: str = "storage/uploads",
         max_size_bytes: int = 10 * 1024 * 1024,
-        pipeline_service: PipelineService | None = None,
     ):
-        self.upload_dir = Path(upload_dir).resolve()
+        self.upload_dir = Path(upload_dir)
         self.max_size_bytes = max_size_bytes
-        self.pipeline_service = (
-            pipeline_service or PipelineService()
-        )
+
+    # --------------------------------------------------
+    # File extension validation
+    # --------------------------------------------------
 
     def validate_extension(self, filename: str) -> str:
+        # Normalize Windows-style paths as well.
         safe_filename = (filename or "document").replace("\\", "/")
         extension = Path(safe_filename).suffix.lower()
 
@@ -69,6 +66,10 @@ class DocumentService:
             )
 
         return extension
+
+    # --------------------------------------------------
+    # MIME type validation
+    # --------------------------------------------------
 
     def validate_mime_type(
         self,
@@ -84,8 +85,14 @@ class DocumentService:
                 415,
             )
 
+    # --------------------------------------------------
+    # File signature validation
+    # --------------------------------------------------
+
     @staticmethod
     def detect_file_type(data: bytes) -> str | None:
+        """Identify file type using its binary signature."""
+
         if data.startswith(b"%PDF-"):
             return ".pdf"
 
@@ -115,6 +122,10 @@ class DocumentService:
                 "File content does not match its extension.",
             )
 
+    # --------------------------------------------------
+    # File integrity validation
+    # --------------------------------------------------
+
     @staticmethod
     def validate_file_integrity(
         data: bytes,
@@ -140,6 +151,10 @@ class DocumentService:
                 "The uploaded file is corrupted or unreadable.",
             ) from exc
 
+    # --------------------------------------------------
+    # File size validation
+    # --------------------------------------------------
+
     def validate_file_size(self, data: bytes) -> None:
         if not data:
             raise UploadValidationError(
@@ -156,6 +171,10 @@ class DocumentService:
                 413,
             )
 
+    # --------------------------------------------------
+    # Complete document validation
+    # --------------------------------------------------
+
     def validate_document(
         self,
         filename: str,
@@ -163,6 +182,7 @@ class DocumentService:
         data: bytes,
     ) -> str:
         extension = self.validate_extension(filename)
+
         self.validate_file_size(data)
 
         self.validate_mime_type(
@@ -182,7 +202,11 @@ class DocumentService:
 
         return extension
 
-    async def save_upload(self, upload: UploadFile) -> dict[str, Any]:
+    # --------------------------------------------------
+    # Document storage
+    # --------------------------------------------------
+
+    async def save_upload(self, upload: UploadFile) -> dict:
         """Validate and store one uploaded document."""
 
         original_filename = (
@@ -194,8 +218,10 @@ class DocumentService:
         extension = self.validate_extension(original_filename)
         content_type = (upload.content_type or "").lower()
 
+        # Read only the configured limit plus one byte.
         data = await upload.read(self.max_size_bytes + 1)
 
+        # Validate before writing to storage.
         self.validate_document(
             filename=original_filename,
             content_type=content_type,
@@ -212,6 +238,7 @@ class DocumentService:
 
         destination = self.upload_dir / stored_filename
 
+        # Exclusive creation prevents overwriting existing files.
         try:
             with destination.open("xb") as file:
                 file.write(data)
@@ -224,7 +251,6 @@ class DocumentService:
             "document_id": document_id,
             "original_filename": original_filename,
             "stored_filename": stored_filename,
-            "file_path": str(destination),
             "content_type": content_type,
             "size_bytes": len(data),
             "sha256": hashlib.sha256(data).hexdigest(),
@@ -232,27 +258,34 @@ class DocumentService:
             "pipeline_status": "pending",
         }
 
-    async def save_and_submit(
-        self,
-        upload: UploadFile,
-        background_tasks: BackgroundTasks,
-    ) -> dict[str, Any]:
-        """Save a document and submit it to the processing pipeline."""
+    # --------------------------------------------------
+    # Detection / extraction pipeline handoff
+    # --------------------------------------------------
+
+    async def save_and_submit(self, upload: UploadFile) -> dict:
+        """
+        Save a validated document and enqueue it for detection/extraction.
+
+        The queue record contains the generated document ID and stored path;
+        a worker can consume it and invoke the project's extraction pipeline.
+        """
 
         document = await self.save_upload(upload)
+        stored_path = str(self.upload_dir / document["stored_filename"])
 
         try:
-            submission = self.pipeline_service.submit_document(
-                document=document,
-                background_tasks=background_tasks,
+            enqueue_document(
+                document_id=document["document_id"],
+                file_path=stored_path,
+                original_filename=document["original_filename"],
+                content_type=document["content_type"],
             )
-
-        except PipelineSubmissionError as exc:
-            document["pipeline_status"] = "failed"
-            document["pipeline_error"] = str(exc)
+        except Exception as exc:
+            # Do not report a queued state if handoff failed. The stored file
+            # remains available for retry/reconciliation.
+            document["pipeline_status"] = "queue_failed"
+            document["pipeline_error"] = "Document was stored but could not be queued."
             return document
 
-        document["pipeline_status"] = submission["pipeline_status"]
-        document["pipeline_message"] = submission["message"]
-
+        document["pipeline_status"] = "queued"
         return document

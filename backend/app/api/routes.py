@@ -1,11 +1,5 @@
 
-from fastapi import (
-    APIRouter,
-    BackgroundTasks,
-    File,
-    HTTPException,
-    UploadFile,
-)
+from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from app.core.config import settings
 from app.services.document_service import (
@@ -31,7 +25,6 @@ def health():
 
 @router.post("/documents/upload", tags=["Documents"])
 async def upload_documents(
-    background_tasks: BackgroundTasks,
     files: list[UploadFile] = File(...),
 ):
     # Validate batch size
@@ -52,8 +45,7 @@ async def upload_documents(
     for uploaded_file in files:
         try:
             result = await document_service.save_and_submit(
-                upload=uploaded_file,
-                background_tasks=background_tasks,
+                uploaded_file
             )
             results.append(result)
 
@@ -73,9 +65,7 @@ async def upload_documents(
                 "status": "failed",
                 "error": {
                     "code": "upload_failed",
-                    "message": (
-                        "An unexpected error occurred during upload."
-                    ),
+                    "message": "An unexpected error occurred during upload.",
                 },
             })
 

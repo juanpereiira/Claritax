@@ -2,6 +2,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    max_upload_size_mb: int = 10
+    max_upload_files: int = 10
     app_name: str = "Claritax"
     app_env: str = "development"
     debug: bool = True
