@@ -1,3 +1,4 @@
+
 fastapi
 uvicorn[standard]
 pydantic
@@ -10,4 +11,5 @@ httpx
 Pillow
 pypdf
 PyMuPDF
-
+paddleocr
+paddlepaddle
