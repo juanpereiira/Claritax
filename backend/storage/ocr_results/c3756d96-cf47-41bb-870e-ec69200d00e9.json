@@ -1,0 +1,637 @@
+{
+  "document_id": "c3756d96-cf47-41bb-870e-ec69200d00e9",
+  "original_filename": "Screenshot 2026-11-05 164215.png",
+  "stored_file_path": "D:\\akumen\\final-project\\Claritax\\backend\\storage\\uploads\\c3756d96-cf47-41bb-870e-ec69200d00e9.png",
+  "full_text": "AJAY BAZIL ISSAC\nAI / ML Engineer\nKochi, Kerala, India | +91 7012792566 | ajaybazilissac93@gmail.com | GitHub | LinkedIn\nPROFESSIONAL SUMMARY\nAI/ML professional with an MCA and an Advanced Certification in Data Science & Artificial Intelligence, holding a strong foundation in\nmachine learning concepts, Python, and the end-to-end ML workflow. Hands-on experience building and evaluating supervised learning\nmodels, computer vision systems (YOLOv11, CNNs), and NLP/Generative AI pipelines (RAG, LLMs), backed by published research in\ndeep learning-based image segmentation (IJRTE, 2019). Skilled in data preprocessing, feature engineering, model evaluation, and\ndeploying ML solutions via REST APIs and Docker. Strong problem-solving mindset, quick learner, and effective communicator eager to\ncontribute to real-world AI/ML solutions.\nTECHNICAL SKILLS\nProgramming & ML: Python, Machine Learning Algorithms (Linear/Logistic Regression, Decision Trees, Random Forests, Gradient\nBoosting), Supervised & Unsupervised Learning, Feature Engineering, Exploratory Data Analysis (EDA)\nModel Evaluation: Confusion Matrix, Precision, Recall, F1-Score, ROC-AUC, Hypothesis Testing\nDeep Learning & Computer Vision: Neural Networks, CNN, RNN, LSTM, Transfer Learning, Object Detection, Image Segmentation,\nYOLOv11, PyTorch, TensorFlow, Keras, OpenCV, CUDA\nNLP & Generative AI: Retrieval-Augmented Generation (RAG), Prompt Engineering, Hugging Face Inference API, Open-Source\nLLMs (Qwen), Sentence Transformers, FAISS, BM25, LangChain Components, Agentic AI Workflows\nData & SQL: SQL, PostgreSQL, MySQL, MongoDB, Pandas, NumPy, Data Cleaning & Preprocessing, Power BI, DAX\nAPIs, Deployment & Tools: RESTful APIs, FastAPI, Docker, Docker Compose, Model Serving, Git, GitHub, Jupyter Notebook,\nGoogle Colab, VS Code, Agile/Scrum\nPROFESSIONAL EXPERIENCE\nAI/ML Intern\n07/2026 - Present\nAkumenbyQ",
+  "total_lines": 25,
+  "average_confidence": 0.9907,
+  "needs_human_review": false,
+  "processed_at": "2026-11-06T04:57:38.346523+00:00",
+  "lines": [
+    {
+      "line_number": 1,
+      "text": "AJAY BAZIL ISSAC",
+      "confidence": 0.999,
+      "bbox": {
+        "points": [
+          [
+            347.0,
+            13.0
+          ],
+          [
+            705.0,
+            13.0
+          ],
+          [
+            705.0,
+            47.0
+          ],
+          [
+            347.0,
+            47.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 2,
+      "text": "AI / ML Engineer",
+      "confidence": 0.9612,
+      "bbox": {
+        "points": [
+          [
+            446.0,
+            60.0
+          ],
+          [
+            605.0,
+            60.0
+          ],
+          [
+            605.0,
+            84.0
+          ],
+          [
+            446.0,
+            84.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 3,
+      "text": "Kochi, Kerala, India | +91 7012792566 | ajaybazilissac93@gmail.com | GitHub | LinkedIn",
+      "confidence": 0.9831,
+      "bbox": {
+        "points": [
+          [
+            193.0,
+            89.0
+          ],
+          [
+            862.0,
+            89.0
+          ],
+          [
+            862.0,
+            113.0
+          ],
+          [
+            193.0,
+            113.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 4,
+      "text": "PROFESSIONAL SUMMARY",
+      "confidence": 0.9975,
+      "bbox": {
+        "points": [
+          [
+            19.0,
+            138.0
+          ],
+          [
+            307.0,
+            138.0
+          ],
+          [
+            307.0,
+            162.0
+          ],
+          [
+            19.0,
+            162.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 5,
+      "text": "AI/ML professional with an MCA and an Advanced Certification in Data Science & Artificial Intelligence, holding a strong foundation in",
+      "confidence": 0.9956,
+      "bbox": {
+        "points": [
+          [
+            18.0,
+            174.0
+          ],
+          [
+            1036.0,
+            174.0
+          ],
+          [
+            1036.0,
+            198.0
+          ],
+          [
+            18.0,
+            198.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 6,
+      "text": "machine learning concepts, Python, and the end-to-end ML workflow. Hands-on experience building and evaluating supervised learning",
+      "confidence": 0.9921,
+      "bbox": {
+        "points": [
+          [
+            15.0,
+            196.0
+          ],
+          [
+            1035.0,
+            196.0
+          ],
+          [
+            1035.0,
+            218.0
+          ],
+          [
+            15.0,
+            218.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 7,
+      "text": "models, computer vision systems (YOLOv11, CNNs), and NLP/Generative AI pipelines (RAG, LLMs), backed by published research in",
+      "confidence": 0.9962,
+      "bbox": {
+        "points": [
+          [
+            12.0,
+            217.0
+          ],
+          [
+            1034.0,
+            217.0
+          ],
+          [
+            1034.0,
+            239.0
+          ],
+          [
+            12.0,
+            239.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 8,
+      "text": "deep learning-based image segmentation (IJRTE, 2019). Skilled in data preprocessing, feature engineering, model evaluation, and",
+      "confidence": 0.9986,
+      "bbox": {
+        "points": [
+          [
+            11.0,
+            238.0
+          ],
+          [
+            1035.0,
+            238.0
+          ],
+          [
+            1035.0,
+            260.0
+          ],
+          [
+            11.0,
+            260.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 9,
+      "text": "deploying ML solutions via REST APIs and Docker. Strong problem-solving mindset, quick learner, and effective communicator eager to",
+      "confidence": 0.9992,
+      "bbox": {
+        "points": [
+          [
+            10.0,
+            259.0
+          ],
+          [
+            1034.0,
+            259.0
+          ],
+          [
+            1034.0,
+            282.0
+          ],
+          [
+            10.0,
+            282.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 10,
+      "text": "contribute to real-world AI/ML solutions.",
+      "confidence": 0.9878,
+      "bbox": {
+        "points": [
+          [
+            10.0,
+            286.0
+          ],
+          [
+            328.0,
+            286.0
+          ],
+          [
+            328.0,
+            300.0
+          ],
+          [
+            10.0,
+            300.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 11,
+      "text": "TECHNICAL SKILLS",
+      "confidence": 0.9941,
+      "bbox": {
+        "points": [
+          [
+            6.0,
+            331.0
+          ],
+          [
+            231.0,
+            331.0
+          ],
+          [
+            231.0,
+            348.0
+          ],
+          [
+            6.0,
+            348.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 12,
+      "text": "Programming & ML: Python, Machine Learning Algorithms (Linear/Logistic Regression, Decision Trees, Random Forests, Gradient",
+      "confidence": 0.9971,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            364.0
+          ],
+          [
+            1021.0,
+            364.0
+          ],
+          [
+            1021.0,
+            389.0
+          ],
+          [
+            0.0,
+            389.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 13,
+      "text": "Boosting), Supervised & Unsupervised Learning, Feature Engineering, Exploratory Data Analysis (EDA)",
+      "confidence": 0.9947,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            388.0
+          ],
+          [
+            799.0,
+            388.0
+          ],
+          [
+            799.0,
+            410.0
+          ],
+          [
+            0.0,
+            410.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 14,
+      "text": "Model Evaluation: Confusion Matrix, Precision, Recall, F1-Score, ROC-AUC, Hypothesis Testing",
+      "confidence": 0.9922,
+      "bbox": {
+        "points": [
+          [
+            1.0,
+            418.0
+          ],
+          [
+            760.0,
+            418.0
+          ],
+          [
+            760.0,
+            435.0
+          ],
+          [
+            1.0,
+            435.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 15,
+      "text": "Deep Learning & Computer Vision: Neural Networks, CNN, RNN, LSTM, Transfer Learning, Object Detection, Image Segmentation,",
+      "confidence": 0.9938,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            441.0
+          ],
+          [
+            1036.0,
+            441.0
+          ],
+          [
+            1036.0,
+            464.0
+          ],
+          [
+            0.0,
+            464.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 16,
+      "text": "YOLOv11, PyTorch, TensorFlow, Keras, OpenCV, CUDA",
+      "confidence": 0.9961,
+      "bbox": {
+        "points": [
+          [
+            1.0,
+            467.0
+          ],
+          [
+            459.0,
+            467.0
+          ],
+          [
+            459.0,
+            485.0
+          ],
+          [
+            1.0,
+            485.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 17,
+      "text": "NLP & Generative AI: Retrieval-Augmented Generation (RAG), Prompt Engineering, Hugging Face Inference API, Open-Source",
+      "confidence": 0.9951,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            490.0
+          ],
+          [
+            999.0,
+            490.0
+          ],
+          [
+            999.0,
+            514.0
+          ],
+          [
+            0.0,
+            514.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 18,
+      "text": "LLMs (Qwen), Sentence Transformers, FAISS, BM25, LangChain Components, Agentic AI Workflows",
+      "confidence": 0.9961,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            512.0
+          ],
+          [
+            795.0,
+            512.0
+          ],
+          [
+            795.0,
+            536.0
+          ],
+          [
+            0.0,
+            536.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 19,
+      "text": "Data & SQL: SQL, PostgreSQL, MySQL, MongoDB, Pandas, NumPy, Data Cleaning & Preprocessing, Power BI, DAX",
+      "confidence": 0.9923,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            538.0
+          ],
+          [
+            927.0,
+            538.0
+          ],
+          [
+            927.0,
+            563.0
+          ],
+          [
+            0.0,
+            563.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 20,
+      "text": "APIs, Deployment & Tools: RESTful APIs, FastAPI, Docker, Docker Compose, Model Serving, Git, GitHub, Jupyter Notebook,",
+      "confidence": 0.9976,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            565.0
+          ],
+          [
+            986.0,
+            565.0
+          ],
+          [
+            986.0,
+            591.0
+          ],
+          [
+            0.0,
+            591.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 21,
+      "text": "Google Colab, VS Code, Agile/Scrum",
+      "confidence": 0.9989,
+      "bbox": {
+        "points": [
+          [
+            1.0,
+            594.0
+          ],
+          [
+            300.0,
+            594.0
+          ],
+          [
+            300.0,
+            611.0
+          ],
+          [
+            1.0,
+            611.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 22,
+      "text": "PROFESSIONAL EXPERIENCE",
+      "confidence": 0.9979,
+      "bbox": {
+        "points": [
+          [
+            0.0,
+            639.0
+          ],
+          [
+            331.0,
+            639.0
+          ],
+          [
+            331.0,
+            659.0
+          ],
+          [
+            0.0,
+            659.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 23,
+      "text": "AI/ML Intern",
+      "confidence": 0.984,
+      "bbox": {
+        "points": [
+          [
+            4.0,
+            685.0
+          ],
+          [
+            124.0,
+            685.0
+          ],
+          [
+            124.0,
+            703.0
+          ],
+          [
+            4.0,
+            703.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 24,
+      "text": "07/2026 - Present",
+      "confidence": 0.9284,
+      "bbox": {
+        "points": [
+          [
+            764.0,
+            676.0
+          ],
+          [
+            906.0,
+            676.0
+          ],
+          [
+            906.0,
+            699.0
+          ],
+          [
+            764.0,
+            699.0
+          ]
+        ]
+      }
+    },
+    {
+      "line_number": 25,
+      "text": "AkumenbyQ",
+      "confidence": 1.0,
+      "bbox": {
+        "points": [
+          [
+            4.0,
+            710.0
+          ],
+          [
+            107.0,
+            710.0
+          ],
+          [
+            107.0,
+            730.0
+          ],
+          [
+            4.0,
+            730.0
+          ]
+        ]
+      }
+    }
+  ]
+}
