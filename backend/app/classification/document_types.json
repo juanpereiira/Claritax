@@ -1,0 +1,52 @@
+{
+  "supported_documents": [
+    {
+      "document_type": "FORM_16",
+      "category": "employment_income"
+    },
+    {
+      "document_type": "FORM_16A",
+      "category": "tds_documents"
+    },
+    {
+      "document_type": "SALARY_SLIP",
+      "category": "employment_income"
+    },
+    {
+      "document_type": "AIS",
+      "category": "tax_information"
+    },
+    {
+      "document_type": "TIS",
+      "category": "tax_information"
+    },
+    {
+      "document_type": "FORM_26AS",
+      "category": "tax_information"
+    },
+    {
+      "document_type": "BANK_STATEMENT",
+      "category": "banking"
+    },
+    {
+      "document_type": "INVESTMENT_STATEMENT",
+      "category": "investments"
+    },
+    {
+      "document_type": "CAPITAL_GAINS_STATEMENT",
+      "category": "investments"
+    },
+    {
+      "document_type": "RECEIPT",
+      "category": "expenses_and_deductions"
+    },
+    {
+      "document_type": "ITR",
+      "category": "tax_returns"
+    },
+    {
+      "document_type": "ITR_ACKNOWLEDGEMENT",
+      "category": "tax_returns"
+    }
+  ]
+}

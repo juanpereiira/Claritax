@@ -9,5 +9,5 @@ pytest
 httpx
 Pillow
 pypdf
-
+PyMuPDF
 
